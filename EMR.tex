@@ -1,0 +1,167 @@
+\documentclass[final]{beamer}
+
+% Poster em modo retrato; ajuste o tamanho do banner aqui:
+%   - size=a0  (A0 vertical)
+%   - ou use size=custom,width=<cm>,height=<cm>
+\usepackage[size=a0,orientation=portrait,scale=1.28]{beamerposter}
+\renewcommand{\tablename}{Tabela}
+\usepackage{caption}              % pacote para personalizar legendas
+
+% Define estilo ABNT para legendas de tabelas
+\setbeamertemplate{caption}[numbered]
+\captionsetup[table]{labelfont=bf, textfont=bf, justification=centering,
+                     name=Tabela, labelsep=space, singlelinecheck=false}
+
+% Pacotes essenciais
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{array,booktabs}
+\usepackage{tikz} % para posicionar logo
+\setlength{\parindent}{0pt}
+
+% Fundo em página inteira (suba "fundo.png" no projeto)
+\usebackgroundtemplate{%
+  \includegraphics[width=\paperwidth,height=\paperheight]{fundoemr.png}%
+}
+
+% Cores e fontes simples (texto direto, sem "blocks" com caixa)
+\setbeamercolor{normal text}{fg=black,bg=}
+\setbeamerfont{title}{size=\huge,series=\bfseries}
+\setbeamerfont{author}{size=\Large}
+\setbeamerfont{institute}{size=\large}
+\setbeamerfont{normal text}{size=\Large}
+
+
+\begin{document}
+\begin{frame}[t]
+
+
+
+% ====== CABEÇALHO ======
+\vspace*{7.0cm}
+\centering
+{\usebeamerfont{title} Comparação e Desempenhos dos Testes de Normalidade\\ 
+  via Simulação de Monte Carlo em Linguagem R\par}
+  
+\vspace{0.8cm}
+{\usebeamerfont{author} Mário Diego Rocha Valente (Graduando em Sistemas de Informação da UFPA)\par}
+
+\vspace{0.8cm}
+{\usebeamerfont{author} Breno Cauã Rodrigues da Silva (Graduando em Estatística da UFPA)\par}
+
+\vspace{0.8cm}
+{\usebeamerfont{author} Dennison Célio de Oliveira Carvalho (Orientador)\par}
+
+\vspace{0.8cm}
+{\usebeamerfont{author} Heliton Ribeiro Tavares (Orientador)\par}
+
+{\usebeamerfont{institute}\texttt{Email:fulano@gmail.com, fulana@gmail.com 
+}\par}
+\vspace{3cm}
+
+% ====== DUAS COLUNAS ======
+
+\begin{columns}[t,totalwidth=0.6\paperwidth]
+  % ----- Coluna Esquerda -----
+  \hspace*{2.5cm}
+  \begin{column}{0.45\paperwidth}
+
+
+    {\large\bfseries 1. INTRODUÇÃO}\par
+    \justifying
+
+    \vspace{1.3cm}
+     Lorem ipsum dolor sit amet. Diam assum ut. Justo magna lorem amet et magna diam tempor. Wisi vero nisl option. Dolore assum molestie voluptua. Sit sea sadipscing labore duo. Consequat erat et veniam ea. Sit clita in te et aliquyam sadipscing. Minim ullamcorper sit kasd. Blandit amet dolor augue justo accumsan dolor. Ut consetetur no accumsan amet ut. Diam et dolores feugiat voluptua. Kasd vero et consetetur placerat sanctus voluptua. Eros magna sadipscing tation eirmod qui. Amet et magna lorem est. Rebum ad elit in ipsum mazim ut illum. Lorem est soluta. Stet feugait ea elit nonumy ipsum. Dolor sanctus nonumy ipsum lorem. Adipiscing tempor facilisis takimata dolore labore. Gubergren autem magna labore dolore diam. Erat dolore at diam facer quis iriure. Sed gubergren aliquyam volutpat gubergren at praesent. 
+       Lorem ipsum dolor sit amet. Diam assum ut. Justo magna lorem amet et magna diam tempor. Wisi vero nisl option. Dolore assum molestie voluptua. Sit sea sadipscing labore duo. Consequat erat et veniam ea. Sit clita in te et aliquyam sadipscing. Minim ullamcorper sit kasd. Blandit amet dolor augue justo accumsan dolor. Ut consetetur no accumsan amet ut. Diam et dolores feugiat voluptua. Kasd vero et consetetur placerat sanctus voluptua. Eros magna sadipscing tation eirmod qui. Amet et magna lorem est.
+
+    \vspace{1.3cm}
+    {\large\bfseries 2. MATERIAIS E MÉTODOS}\par
+    \justifying
+    \vspace{1.3cm}
+  Lorem ipsum dolor sit amet. Diam assum ut. Justo magna lorem amet et magna diam tempor. Wisi vero nisl option. Dolore assum molestie voluptua. Sit sea sadipscing labore duo. Consequat erat et veniam ea. Sit clita in te et aliquyam sadipscing. Minim ullamcorper sit kasd. Blandit amet dolor augue justo accumsan dolor. Ut consetetur no accumsan amet ut. Eros magna sadipscing tation eirmod qui. Amet et magna lorem est.
+    Lorem ipsum dolor sit amet. Diam assum ut. Justo magna lorem amet et magna diam tempor. Wisi vero nisl option. Dolore assum molestie voluptua. Sit sea sadipscing labore duo. Consequat erat et veniam ea. Sit clita in te et aliquyam sadipscing. Minim ullamcorper sit kasd. Blandit amet dolor augue justo accumsan dolor. Ut consetetur no accumsan amet ut. Diam et dolores feugiat voluptua. Kasd vero et consetetur placerat sanctus voluptua. Eros magna sadipscing tation eirmod qui. Amet et magna lorem est.
+
+      \vspace{1.3cm}
+
+
+    \vspace{1em}
+    {\large\bfseries 3. RESULTADOS E DISCUSSÃO}\par
+    \justifying
+    \vspace{1.3cm}
+    	 Lorem ipsum dolor sit amet. Diam assum ut. Justo magna lorem amet et magna diam tempor. Wisi vero nisl option. Dolore assum molestie voluptua. Sit sea sadipscing labore duo. Consequat erat et veniam ea. Sit clita in te et aliquyam sadipscing. 
+	 Lorem ipsum dolor sit amet. Diam assum ut. Justo magna lorem amet et magna diam tempor. Wisi vero nisl option. Dolore assum molestie voluptua. Sit sea sadipscing labore duo. Consequat erat et veniam ea. Sit clita in te et aliquyam sadipscing. 
+	 Lorem ipsum dolor sit amet. Diam assum ut. Justo magna lorem amet et magna diam tempor. Wisi vero nisl option.
+
+  Lorem ipsum dolor sit amet. Diam assum ut. Justo magna lorem amet et magna diam tempor. Wisi vero nisl option. Dolore assum molestie voluptua. Sit sea sadipscing labore duo. Consequat erat et veniam ea. Sit clita in te et aliquyam sadipscing. Minim ullamcorper sit kasd. Blandit amet dolor augue justo accumsan dolor. Ut consetetur no accumsan amet ut. Diam et dolores feugiat voluptua. Kasd vero et consetetur placerat sanctus voluptua. Eros magna sadipscing tation eirmod qui. Amet et magna lorem est.
+
+
+
+    \vspace{1cm}
+    \centering
+    
+\begin{table}[H]
+    \caption{Título e cabeçalho da tabela}
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.25}
+    \centering
+    \begin{tabular}{>{\RaggedRight}p{8.2cm}cc}
+      \toprule
+      & \textbf{Lodo Biológico} & \textbf{Finos de madeira}\\
+      \midrule
+      Umidade in natura (\%)      & 85   & 45   \\
+      Poder Calorífico (Kcal/kg)  & 3991 & 4630 \\
+      Lignina (\%)                & --   & 31{,}2\\
+      \bottomrule
+    \end{tabular}
+    \par\smallskip
+    \raggedright\footnotesize 
+    \centering Fonte: Elaborado pelo autor. % <- aqui pode mudar a fonte
+    \normalsize
+    \label{tab:caracteristicas}
+\end{table}
+
+
+    \vspace{1em}
+    \justifying
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut
+    sapien vitae quam consequat convallis.
+  Lorem ipsum dolor sit amet. Diam assum ut. Justo magna lorem amet et magna diam tempor. Wisi vero nisl option. Dolore assum molestie voluptua. Sit sea sadipscing labore duo. Consequat erat et veniam ea. Sit clita in te et aliquyam sadipscing. Minim ullamcorper sit kasd. Blandit amet dolor augue justo accumsan dolor. Ut consetetur no accumsan amet ut. Diam et dolores feugiat voluptua. Kasd vero et consetetur placerat sanctus voluptua. Eros magna sadipscing tation eirmod qui. Amet et magna lorem est.\\
+
+    
+
+  \end{column}
+  \hspace{0.02\paperwidth} 
+  %\hspace{1.5cm} % “gutter” entre as colunas — ajuste se quiser
+
+  % ----- Coluna Direita -----
+  \begin{column}{0.45\textwidth}
+ 
+    {\large\bfseries 4. CONCLUSÃO}\par
+    \justifying
+     \vspace{1.3cm}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet
+    neque nulla. Vivamus blandit mattis orci non volutpat. Lorem ipsum dolor sit amet. Diam assum ut. Justo magna lorem amet et magna diam tempor. Wisi vero nisl option. Dolore assum molestie voluptua. Sit sea sadipscing labore duo. Consequat erat et veniam ea. Sit clita in te et aliquyam sadipscing. Minim ullamcorper sit kasd. Blandit amet dolor augue justo accumsan dolor. Ut consetetur no accumsan amet ut. Diam et dolores feugiat voluptua. Kasd vero et consetetur placerat sanctus voluptua. Eros magna sadipscing tation eirmod qui. Amet et magna lorem est.
+
+    \vspace{1.3cm}
+    {\large\bfseries 5. REFERÊNCIAS}\par
+
+     \vspace{1.3cm}
+
+    
+    ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. \textbf{NBR 14724}:
+    Informação e Documentação – Trabalhos acadêmicos – Apresentação.
+    Rio de Janeiro: ABNT, 2001.\par\medskip
+    ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. \textbf{NBR 18457}:
+    Informação e Documentação – Trabalhos acadêmicos – Apresentação.
+    Rio de Janeiro: ABNT, 2010.\par\medskip
+    ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. \textbf{NBR 17596}:
+    Informação e Documentação – Trabalhos acadêmicos – Apresentação.
+    Rio de Janeiro: ABNT, 2015.\par\medskip
+    MORAES, L. S. \textit{Apresentação de Trabalhos Científicos}.
+    São Paulo: Edgard Blücher, 1990. 465 p.
+    \normalsize
+  \end{column}
+\end{columns}
+
+\end{frame}
+\end{document}

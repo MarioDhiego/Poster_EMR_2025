@@ -1,0 +1,275 @@
+%----------------------------------------------------------------------------------------
+%	CONFIGURACOES
+%----------------------------------------------------------------------------------------
+\documentclass[a0,portrait]{a0poster}
+\setlength{\paperwidth}{90cm}
+\setlength{\paperheight}{120cm}
+
+\usepackage[top=3cm, bottom=0.3cm, left=4cm, right=6cm]{geometry}
+\usepackage[compact]{titlesec}
+\usepackage{lipsum}
+
+\usepackage{multicol}
+\columnsep=100pt
+
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\definecolor{gray}{rgb}{0.7,0.7,0.7}
+\definecolor{vinho}{HTML}{A50021}
+\definecolor{rosaFundo}{HTML}{F2DADA}
+\definecolor{cinzaFundo}{HTML}{BFBFBF}
+\definecolor{cinzaTabela1}{HTML}{E6E6E6}
+\definecolor{cinzaTabela2}{HTML}{CACACA}
+\usepackage{sectsty}
+\sectionfont{\color{vinho}}
+
+\usepackage{fancybox}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+\usepackage{tikz}
+\usetikzlibrary{shadows,calc}
+% some parameters for customization
+\def\shadowshift{2pt,-2pt}
+\def\shadowradius{4pt}
+
+\colorlet{innercolor}{black!60}
+\colorlet{outercolor}{gray!05}
+
+% this draws a shadow under a rectangle node
+\newcommand\drawshadow[1]{
+    \begin{pgfonlayer}{shadow}
+        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.south west)+(\shadowshift)+(\shadowradius/2,\shadowradius/2)$) circle (\shadowradius);
+        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) circle (\shadowradius);
+        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) circle (\shadowradius);
+        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.north east)+(\shadowshift)+(-\shadowradius/2,-\shadowradius/2)$) circle (\shadowradius);
+        \shade[top color=innercolor,bottom color=outercolor] ($(#1.south west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) rectangle ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$);
+        \shade[left color=innercolor,right color=outercolor] ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$);
+        \shade[bottom color=innercolor,top color=outercolor] ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$);
+        \shade[outercolor,right color=innercolor,left color=outercolor] ($(#1.south west)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$);
+        \filldraw ($(#1.south west)+(\shadowshift)+(\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)-(\shadowradius/2,\shadowradius/2)$);
+    \end{pgfonlayer}
+}
+
+% create a shadow layer, so that we don't need to worry about overdrawing other things
+\pgfdeclarelayer{shadow} 
+\pgfsetlayers{shadow,main}
+
+\newsavebox\mybox
+\newlength\mylen
+
+\newcommand\shadowimage[2][]{%
+\setbox0=\hbox{\includegraphics[#1]{#2}}
+\setlength\mylen{\wd0}
+\ifnum\mylen<\ht0
+\setlength\mylen{\ht0}
+\fi
+\divide \mylen by 120
+\def\shadowshift{\mylen,-\mylen}
+\def\shadowradius{\the\dimexpr\mylen+\mylen+\mylen\relax}
+\begin{tikzpicture}
+\node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[#1]{#2}};
+\drawshadow{image}
+\end{tikzpicture}}
+
+\usepackage{caption}
+\usepackage{amsfonts, amsmath, amsthm, amssymb}
+\usepackage{wrapfig}
+\usepackage[portuges]{babel}
+% \usepackage[utf8]{inputenc}
+
+\usepackage[alf]{abntex2cite}
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{fontspec}
+\newfontfamily\boogie{RugeBoogie}[Path=fonts/, UprightFont=*-Regular]
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{thebibliography}{\normalsize}
+\usepackage[font=normalsize,labelfont=bf]{caption}
+\usepackage{mwe}
+
+%----------------------------------------------------------------------------------------
+%	CABEÇALHO
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\begin{minipage}[c]{\linewidth}
+	\vspace{0.1cm}
+	
+    \noindent\makebox[\textwidth][c]
+    {
+    	% Imagem a esquerda
+		\begin{minipage}[c]{0.10\textwidth}
+        	\vspace{0pt}\raggedright
+            \hspace{1cm}
+            \includegraphics[width=\linewidth]{example-image-a}
+        	\includegraphics[width=\linewidth]{example-image-b}
+		\end{minipage}
+
+        \hfill
+
+		% Titulo e Autores
+        \fcolorbox{rosaFundo}{rosaFundo}{
+        \begin{minipage}[c]{0.70\textwidth}
+        	\centering
+        	\vspace{1cm}
+                \Huge \textbf{Comparação e Desempenho dos Testes de Normalidade Implementados na Linguagem R via Simulação de Monte Carlo}\\[0.5cm]
+        	\LARGE \textbf{Autor$^{1}$, Autor$^{2}$}\\[0.2cm]
+        	\large 1. Departamento, Universidade\\
+                \large 2. Departamento, Universidade\\[0.1cm]
+        	\small \texttt{Email: autor@email.br, autor@email.br}\\
+            \vspace{1cm}
+        \end{minipage}}
+
+        % Imagem a direita
+        \begin{minipage}[c]{0.15\textwidth}
+        \vspace{0pt}\raggedleft
+        \includegraphics[scale=0.5,width=\linewidth]{example-image-c}
+        \hspace{1cm}
+        \end{minipage}
+  }
+  \noindent\makebox[\linewidth]{
+  	\textcolor{vinho}{
+    	\rule{\paperwidth}{5pt}
+        }
+	}
+\\[0.1cm]
+
+%----------------------------------------------------------------------------------------
+\vspace{0.5cm}
+\begin{multicols}{2}
+%----------------------------------------------------------------------------------------
+%	INTRODUÇÃO
+%----------------------------------------------------------------------------------------
+\section{Introdução}
+
+\lipsum[1-2]
+
+%----------------------------------------------------------------------------------------
+%	OBJETIVO
+%---------------------------------------------------------------------------------------- 
+\section{Objetivo ou Proposta}
+
+\lipsum[3-4]
+
+\lipsum[5]
+
+\begin{wrapfigure}[13]{L}{.35\linewidth}
+\noindent\shadowimage[width=\linewidth]{example-image-plain}
+\captionof{figure}{Legenda}
+\end{wrapfigure}
+
+\lipsum[6-7]
+
+%----------------------------------------------------------------------------------------
+%	FUNDAMENTAÇÃO TEÓRICA
+%---------------------------------------------------------------------------------------- 
+\section{Fundamentação Teórica}
+
+\lipsum[8-10]
+
+%----------------------------------------------------------------------------------------
+%	METODOLOGIA
+%----------------------------------------------------------------------------------------
+\section{Metodologia}
+
+\lipsum[11-12]
+
+{
+\centering
+\noindent\shadowimage[width=.55\linewidth]{example-image-plain}
+\captionof{figure}{Legenda}
+\label{fig:rede}
+}
+
+\lipsum[13]
+
+%----------------------------------------------------------------------------------------
+%	RESULTADOS
+%----------------------------------------------------------------------------------------
+\section{Resultados teóricos/prático e/ou análises (se houver)}
+
+\lipsum[14-15]
+
+\vphantom{1}\\
+{
+\centering
+\begin{tikzpicture}
+\node[anchor=south west,inner sep=0] (table) at (0,0)
+{\rowcolors{2}{cinzaTabela1}{cinzaTabela2}
+   \begin{tabular}{|c|c|c|c|c|}
+       \hline
+       \rowcolor{gray}
+       Cabeçalho 1 & Cabeçalho 2 & Cabeçalho 3 & Cabeçalho 4 & Cabeçalho 5 \\ \hline
+       Valor 11    & Valor 12    & Valor 13    & Valor 14    & Valor 15    \\ \hline
+       Valor 21    & Valor 22    & Valor 23    & Valor 24    & Valor 25    \\ \hline
+   \end{tabular}
+};
+\drawshadow{table}
+\end{tikzpicture}
+\captionof{figure}{Resultados dos testes de tradução em BLEU \textit{score}}
+\label{fig:resultados}
+}
+\vphantom{1}\\
+
+\lipsum[16]
+
+%----------------------------------------------------------------------------------------
+%	AGRADECIMENTOS
+%----------------------------------------------------------------------------------------
+\section*{Agradecimentos}
+
+\lipsum[17]
+
+\cite{bender-koller-2020-climbing,propor-2024-international,ws-2017-brazilian}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAFIA
+%----------------------------------------------------------------------------------------
+\renewcommand{\refname}{\color{vinho} Referências}
+\bibliography{bibliografia}
+
+\end{multicols}
+
+%----------------------------------------------------------------------------------------
+%	RODAPÉ
+%----------------------------------------------------------------------------------------
+
+\vspace{0.5cm}
+
+\noindent\makebox[\linewidth]{
+	\textcolor{vinho}{
+    	\rule{\linewidth}{5pt}
+	}
+}
+    
+\noindent\makebox[\textwidth][c]
+{
+	\fcolorbox{vinho}{vinho}{
+		\begin{minipage}[c]{0.135\linewidth}
+        	\centering
+        	\vspace{1.8cm}
+        	\textcolor{rosaFundo}{ \Huge \boogie IX TILic }
+            \vspace{1.65cm}
+		\end{minipage}
+        \hfill
+    }
+
+    \fcolorbox{cinzaFundo}{cinzaFundo}{
+    	\begin{minipage}[c]{0.845\linewidth}
+        
+       		\centering
+        	\vspace{0.7cm}
+			\Large IX Workshop de Iniciação Científica em Tecnologia da Informação e da Linguagem Humana – TILic 2024\\
+			\large Evento integrante do Simpósio Brasileiro em Tecnologia da Informação e da Linguagem Humana (STIL)\\
+			Belém, Pará \\
+            \vspace{0.75cm}
+
+    	\end{minipage}}
+}
+
+\end{minipage}
+\end{document}
+%----------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
