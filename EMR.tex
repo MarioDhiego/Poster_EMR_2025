@@ -1,6 +1,3 @@
-
-
-
 %-----------------------------------------------------------------------------------%
 \documentclass[final]{beamer}
 % Poster em modo retrato; ajuste o tamanho do banner aqui:
@@ -228,121 +225,109 @@ Distribuição              & Amostra &   AD  & CVM  &  DA   & JB   &  KS   & Li
     \caption{Simulações em linguagem R: (a) Tamanho de amostra, (b) Erro Tipo I e (c) Terceira simulação.}
     \label{fig:simulacoes}
 \end{figure}
+%--------------------------------------------------------------------------------------------------------------------------------
 
 
+%--------------------------------------------------------------------------------------------------------------------------------
 %%%%%%%%%% Erro Tipo I -> Distribuição Beta %%%%%%%%%%
 \begin{figure}[H]
     \centering
-      \caption{Comparação do Erro Tipo I dos testes AD, CM, DG, LL, JB, KS, LL, ZA, ZC e ZK em função do tamanho amostral para a \textbf{Distribuição} $\textbf{Cauchy}(0, 1)$.}
-    \label{fig:erro_tipo_I_dist_cauchy}
-    % Primeira figura
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Distribuição_Beta/Erro_TipoI/erro_tipo_I_beta_30.pdf}
-        \caption{(\(N = 30\)}
-        \label{fig:beta_30}
-    \end{subfigure}
-    \hfill
-    % Segunda figura
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Distribuição_Beta/Erro_TipoI/erro_tipo_I_beta_50.pdf}
-        \caption{\(N = 50\)}
-        \label{fig:beta_50}
-    \end{subfigure}
-    \hfill
-    % Terceira figura
+    \caption{Comparação do Erro Tipo I dos testes AD, CM, DG, LL, JB, KS, ZA, ZC e ZK
+    em função do tamanho amostral para a \textbf{Distribuição} \(\textbf{Beta}(2,5)\).}
+    \label{fig:erro_tipo_I_beta}
+
+    % Primeira linha
     \begin{subfigure}[b]{0.32\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Distribuição_Beta/Erro_TipoI/erro_tipo_I_beta_100.pdf}
+       \fbox{\includegraphics[height=10cm,keepaspectratio]{Distribuição_Beta/Erro_TipoI/erro_tipo_I_beta_30.pdf}}
+        \caption{\(N = 30\)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+         \fbox{\includegraphics[height=10cm,keepaspectratio]{Distribuição_Beta/Erro_TipoI/erro_tipo_I_beta_50.pdf}}
+        \caption{\(N = 50\)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+         \fbox{\includegraphics[height=10cm,keepaspectratio]{Distribuição_Beta/Erro_TipoI/erro_tipo_I_beta_100.pdf}}
         \caption{\(N = 100\)}
-        \label{fig:beta_100}
     \end{subfigure}
-    \label{fig:erro_tipoI_beta}
-\end{figure}
 
+    \vspace{1em}
 
-
-\begin{figure}[H]
-    \centering
-    % Primeira figura
-    \begin{subfigure}[b]{0.33\textwidth}
+    % Segunda linha
+    \begin{subfigure}[b]{0.32\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Distribuição_Beta/Erro_TipoI/erro_tipo_I_beta_300.pdf}
+         \fbox{\includegraphics[height=10cm,keepaspectratio]{Distribuição_Beta/Erro_TipoI/erro_tipo_I_beta_300.pdf}}
         \caption{\(N = 300\)}
-        \label{fig:beta_30}
     \end{subfigure}
     \hfill
-    % Segunda figura
-    \begin{subfigure}[b]{0.33\textwidth}
+    \begin{subfigure}[b]{0.32\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Distribuição_Beta/Erro_TipoI/erro_tipo_I_beta_500.pdf}
+        \includegraphics[height=10Cm,keepaspectratio]{Distribuição_Beta/Erro_TipoI/erro_tipo_I_beta_500.pdf}
         \caption{\(N = 500\)}
-        \label{fig:beta_50}
     \end{subfigure}
     \hfill
-    % Terceira figura
-    \begin{subfigure}[b]{0.29\textwidth}
+    \begin{subfigure}[b]{0.32\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Distribuição_Beta/Erro_TipoI/erro_tipo_I_beta_1000.pdf}
-        \caption{\(N = 1.000\)}
-        \label{fig:beta_100}
+        \includegraphics[height=10cm,keepaspectratio]{Distribuição_Beta/Erro_TipoI/erro_tipo_I_beta_1000.pdf}
+        \caption{\(N = 1000\)}
     \end{subfigure}
-    \label{fig:erro_tipoI_beta}
 \end{figure}
 
-
+%--------------------------------------------------------------------------------------------------------------------------------%
 %%%%%%%%%% Poder do Teste -> Distribuição Beta %%%%%%%%%%
 \begin{figure}[H]
     \centering
-      \caption{Comparação do Poder do Teste dos testes AD, CM, DG, LL, JB, KS, ZA, ZC e ZK em função do tamanho amostral para a \textbf{Distribuição} \(\textbf{Cauchy}(0, 1)\).}
-    \label{fig:poder_teste_dist_cauchy}
-    % Primeira figura
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Distribuição_Beta/Poder_Teste/poder_teste_beta_30.pdf}
-        \caption{(\(N = 30\)}
-        \label{fig:beta_30}
-    \end{subfigure}
-    \hfill
-    % Segunda figura
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Distribuição_Beta/Poder_Teste/poder_teste_beta_50.pdf}
-        \caption{\(N = 50\)}
-        \label{fig:beta_50}
-    \end{subfigure}
-    \hfill
-    % Terceira figura
+    \caption{Comparação do Poder do Teste dos testes AD, CM, DG, LL, JB, KS, ZA, ZC e ZK
+    em função do tamanho amostral para a \textbf{Distribuição} \(\textbf{Beta}(2,5)\).}
+    \label{fig:poder_teste_beta}
+
+    % Primeira linha
     \begin{subfigure}[b]{0.32\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Distribuição_Beta/Poder_Teste/poder_teste_beta_100.pdf}
-        \caption{\(N = 100\)}
-        \label{fig:beta_100}
+        \includegraphics[height=10cm,keepaspectratio]{Distribuição_Beta/Poder_Teste/poder_teste_beta_30.pdf}
+        \caption{\(N = 30\)}
     \end{subfigure}
-    \label{fig:erro_tipoI_beta}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[height=10cm,keepaspectratio]{Distribuição_Beta/Poder_Teste/poder_teste_beta_50.pdf}
+        \caption{\(N = 50\)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[height=10cm,keepaspectratio]{Distribuição_Beta/Poder_Teste/poder_teste_beta_100.pdf}
+        \caption{\(N = 100\)}
+    \end{subfigure}
+
+    \vspace{1em}
+
+    % Segunda linha
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[height=10cm,keepaspectratio]{Distribuição_Beta/Poder_Teste/poder_teste_beta_300.pdf}
+        \caption{\(N = 300\)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.33\textwidth}
+        \centering
+        \includegraphics[height=10cm,keepaspectratio]{Distribuição_Beta/Poder_Teste/poder_teste_beta_500.pdf}
+        \caption{\(N = 500\)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[height=10cm,keepaspectratio]{Distribuição_Beta/Poder_Teste/poder_teste_beta_1000.pdf}
+        \caption{\(N = 1000\)}
+    \end{subfigure}
 \end{figure}
 
 
-
-
-
-
     
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
