@@ -114,7 +114,7 @@ Neste estudo, a eficácia dos testes de normalidade foi avaliada por meio da sim
 \justifying
 \vspace{1.3cm}
 
-%Para reprodutibilidade deste estudo, o script em R foi armazenado em um repositório %no \textit{Github} que pode ser acessado no seguinte link: %\href{https://github.com/MarioDhiego/Teste\_Normalidade}{Testes de Normalidade}.
+O script em R foi armazenado no \href{https://github.com/MarioDhiego/Teste_Normalidade}{https://github.com/MarioDhiego/Teste\_Normalidade}.
 
 \vspace{0.5cm}
 
@@ -159,17 +159,17 @@ Distribuição              & Amostra &   AD  & CVM  &  DA   & JB   &  KS   & Li
                 & 1000  & 0.004  & 0.10  & 0.010  & 0.10 & 0.10  & 0.10  & 0.10  & 0.10  & 0.10  & 0.10       \\
 \hline\hline
 \multirow{6}{*}{Normal (0,1)}   
-               & 30     & 1.0   & 0.95  & 0.94  & 0.93 &  1.0  &  0.95  & 0.94  &  0.94  &  0.94  & 0.95   \\
+               & 30     & 1.0   & 0.95  &  0.94 & 0.93 &  1.0  &  0.95  & 0.94  &  0.94  &  0.94  & 0.95   \\
                &  50    & 1.0   & 0.94  &  0.94 & 0.93 &  1.0  &  0.94  & 0.94  &  0.94  &  0.94  & 0.94    \\
-               & 100    & 1.0   &  0.95 &  0.95 & 0.93 &  1.0  &  0.95  & 0.95  &  0.94  &  9.94  & 0.94   \\
-               & 300    &       &       &       &      &       &        &       &        &        &        \\
-               & 500    &       &       &       &      &       &        &       &        &        &        \\
-               & 1000   &       &       &       &      &       &        &       &        &        &        \\  
+               & 100    & 1.0   & 0.95  &  0.95 & 0.93 &  1.0  &  0.95  & 0.95  &  0.94  &  0.94  & 0.94   \\
+               & 300    & 1.0   & 0.95  &  0.95 & 0.94 &  1.0  &  0.94  & 0.95  &  0.95  &  0.95  & 0.95    \\
+               & 500    & 1.0   & 0.95  &  0.95 & 0.95 &  1.0  &  0.95  & 0.95  &  0.95  &  0.95  & 0.95    \\
+               & 1000   & 1.0   & 0.96  &  0.96 & 0.96 &  1.0  &  0.96  & 0.95  &  0.96  &  0.96  & 0.96     \\  
 \hline\hline
-\multirow{6}{*}{Couchy (0,1)}     
-               & 30     &  0.30 & 0.05  &  0.16 & 0.03 &  0.32 &  0.08  & 0.06  & 0.07   & 0.08   & 0.07   \\
-               & 50     &       &       &       &      &       &        &       &         &         &        \\
-               & 100    &       &       &       &      &       &        &       &         &         &        \\
+\multirow{6}{*}{Cauchy (0,1)}     
+               & 30     &  0.30 & 0.05  &  0.16 & 0.03  & 0.32  & 0.08  & 0.06  & 0.07   & 0.08   & 0.07   \\
+               & 50     &  0.19 & 0.02  &  0.12 & 0.01  & 0.19  & 0.03  & 0.02  & 0.02   & 0.03   & 0.03    \\
+               & 100    &  0.08 & 0.08  &  0.08 &  0.05 & 0.08  & 0.01  & 0.01  & 0.01   & 0.01   & 0.02    \\
                & 300    &       &       &       &      &       &        &       &         &         &        \\
                & 500    &       &       &       &      &       &        &       &         &         &        \\
                & 1000   &       &       &       &      &       &        &       &         &         &        \\
@@ -338,8 +338,9 @@ Distribuição              & Amostra &   AD  & CVM  &  DA   & JB   &  KS   & Li
 
 
     \vspace{1.3cm}
-{\large\bfseries 5. REFERÊNCIAS}\par
+{\large\bfseries 5. CONSIDERAÇÕES FINAIS}\par
 
+Para Amostras grandes, maiores que 500, o teste de Zang(2002) aprsentou o melhor desempenho. No caso de amostras menores, de modo geral, o teste Shapiro-Wilk obteve os melhores resultados. O teste de Kappa-Fleis foi aplicado para avaliar a concordância nas decisões. Para a maioria das distribuições, os testes tiveram forte concordância. Por outro lado, os testes de KS e AD tiveram baixa potência, mesmo em amostras grandes.
     \vspace{1.3cm}
 
     
