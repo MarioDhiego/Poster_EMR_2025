@@ -3,7 +3,7 @@
 % Poster em modo retrato; ajuste o tamanho do banner aqui:
 %   - size=a0  (A0 vertical)
 %   - ou use size=custom,width=<cm>,height=<cm>
-\usepackage[size=a0,orientation=portrait,scale=1.28]{beamerposter}
+\usepackage[size = a0, orientation = portrait, scale=1.28]{beamerposter}
 \renewcommand{\tablename}{Tabela}
 \usepackage{subcaption} 
 \usepackage{caption} 
@@ -17,12 +17,15 @@
 \usepackage{graphicx}
 \usepackage{ragged2e}
 \usepackage{array,booktabs}
-\usepackage{tikz} 
 \setlength{\parindent}{0pt}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{minted} 
 \usepackage{multirow}
+
+\usepackage{tikz} 
+\usepackage{qrcode}
+
 
 \lstset{
     language=Python,
@@ -41,7 +44,8 @@
 
 % Fundo em página inteira (suba "fundo.png" no projeto)
 \usebackgroundtemplate{%
-  \includegraphics[width=\paperwidth,height=\paperheight]{fundoemr.png}%
+  \includegraphics[width=\paperwidth,
+  height=\paperheight]{fundoemr.png}%
 }
 
 % Cores e fontes simples (texto direto, sem "blocks" com caixa)
@@ -331,23 +335,29 @@ $Cauchy(0, 1)$  &  0,81  \\
 \end{figure}
 
 
-    
-
-
-
-
-
-    \vspace{1.3cm}
+ \vspace{1.3cm}
 {\large\bfseries 5. CONSIDERAÇÕES FINAIS}\par
 
-Para Amostras grandes, maiores que 500, o teste de Zang(2002) aprsentou o melhor desempenho. No caso de amostras menores, de modo geral, o teste Shapiro-Wilk obteve os melhores resultados. O teste de Kappa-Fleis foi aplicado para avaliar a concordância nas decisões. Para a maioria das distribuições, os testes tiveram forte concordância. Por outro lado, os testes de KS e AD tiveram baixa potência, mesmo em amostras grandes.
-    \vspace{1.3cm}
+% --- Texto principal ---
+
+Para amostras maiores que 500, o teste de Zhang (2002) apresentou o melhor desempenho.
+Em amostras menores, o teste de Shapiro–Wilk obteve os melhores resultados. O teste de Kappa–Fleiss foi aplicado, e na maioria das distribuições, os testes tiveram forte concordância. Por outro lado, os testes de KS e AD apresentaram baixa potência, mesmo em amostras grandes.
 
     
-  
     \normalsize
   \end{column}
 \end{columns}
+
+
+% --- QR Code sobre o banner ---
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=south east, xshift=-1.8cm, yshift=0.2cm] at (current page.south east)
+{\qrcode[height=3.7cm]{https://github.com/MarioDhiego/Teste_Normalidade/blob/main/Banner.pdf}};
+\end{tikzpicture}
+
+
+
+
 
 \end{frame}
 \end{document}
